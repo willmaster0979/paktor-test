@@ -13,9 +13,9 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+
 artifacts:
   files:
-    files:
-      - lambda_function.zip
-    discard-paths: "yes"
-    base-directory: "target"
+    - lambda_function.zip
+  discard-paths: yes
+  base-directory: target
