@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.1
 
 phases:
   #install:
@@ -8,7 +8,7 @@ phases:
     commands:
       - echo Build started on `date`
       #- echo Compiling the Python code......
-      - zip lambda_function.zip lambda_function.py
+      - "zip lambda_function.zip lambda_function.py"
   post_build:
     commands:
       - echo Build completed on `date`
