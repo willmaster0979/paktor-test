@@ -8,8 +8,7 @@ phases:
     commands:
       - echo Build started on `date`
       #- echo Compiling the Python code......
-      - "cp src/lambda_function.py target/"
-      - "cd target && zip lambda_function.zip lambda_function.py"
+      - "cd src && zip -r /target/lambda_function.zip ."
   post_build:
     commands:
       - echo Build completed on `date`
