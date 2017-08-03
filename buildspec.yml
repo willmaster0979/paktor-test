@@ -8,7 +8,7 @@ phases:
     commands:
       - echo Build started on `date`
       #- echo Compiling the Python code......
-      - "cd src && zip -r ../target/lambda_function.zip ."
+      - zip lambda_function.zip lambda_function.py"
   post_build:
     commands:
       - echo Build completed on `date`
@@ -17,4 +17,4 @@ artifacts:
   files:
     - lambda_function.zip
   discard-paths: yes
-  base-directory: target
+  #base-directory: target
