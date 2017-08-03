@@ -7,18 +7,19 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - npm install
+      #- npm install
   post_build:
     commands:
       - echo Build completed on `date`
-      - mkdir build-output
-      - cp lambda_function.py build-output
-      - cd build-output/
-      - zip -qr build-output.zip ./*
-      - mv build-output.zip ../
+      #- mkdir build-output
+      #- cp lambda_function.py build-output
+      #- cd build-output/
+      #- zip -qr build-output.zip ./*
+      #- mv build-output.zip ../
+      #- echo Build completed on `date`
 
 artifacts:
   files:
-    - build-output.zip
+    - lambda_function.py
   #discard-paths: yes
   #base-directory: target
