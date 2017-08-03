@@ -11,10 +11,14 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - mkdir build-output
+      - cp lambda_function.py build-output
+      - cd build-output/
+      - zip -qr build-output.zip ./*
+      - mv build-output.zip ../
 
 artifacts:
-  type: zip
   files:
-    - lambda_function.py
+    - build-output.zip
   #discard-paths: yes
   #base-directory: target
