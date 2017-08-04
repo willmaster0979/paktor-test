@@ -11,6 +11,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      #- zip lambda_function.zip lambda_function.py
       #- mkdir build-output
       #- cp lambda_function.py build-output
       #- cd build-output/
