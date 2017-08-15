@@ -3,10 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
+      - npm install
       - npm install -g serverless
   build:
     commands:
+      - echo 'start...'
       - serverless deploy | tee deploy.out
+      - echo 'end...'
   #post_build:
   #  commands:
 
