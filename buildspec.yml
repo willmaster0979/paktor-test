@@ -1,26 +1,18 @@
 version: 0.2
 
 phases:
-  #install:
-  #  commands:
-  #    - pip install pyyaml
+  install:
+    commands:
+      - npm install
+      - npm install -g serverless
   build:
     commands:
-      - echo Build started on `date`
-      #- npm install
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      #- zip lambda_function.zip lambda_function.py
-      #- mkdir build-output
-      #- cp lambda_function.py build-output
-      #- cd build-output/
-      #- zip -qr build-output.zip ./*
-      #- mv build-output.zip ../
-      #- echo Build completed on `date`
+      - serverless deploy | tee deploy.out
+  #post_build:
+  #  commands:
 
-artifacts:
-  files:
-    - lambda_function.py
+#artifacts:
+#  files:
+#    - lambda_function.py
   #discard-paths: yes
   #base-directory: target

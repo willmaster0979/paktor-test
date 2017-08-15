@@ -1,0 +1,51 @@
+###
+#  Copyright (c) 2013-2017, Paktor Pte. Ltd
+#  All rights reserved.
+#
+#  This file contains the valuable properties of Paktor Pte. Ltd,
+#  embodying substantial creative efforts and confidential information,
+#  ideas and expressions. No part of this file may be reproduced or
+#  distributed in any form or by any means, or stored in a data base or
+#  a retrieval system, without the prior written permission of
+#  Paktor Pte. Ltd.
+###
+
+service: temp-subscribe-app-event
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: python2.7
+  stage: stage
+  region: ap-southeast-1
+  deploymentBucket: paktortest
+
+package:
+  individually: true
+  exclude:
+    - "**/*"
+
+functions:
+  app_event:
+    name: temp_subscribe_app_event
+    handler: handler.hello
+    description: My function
+    memorySize: 128
+    timeout: 10
+    role: arn:aws:iam::373337940780:role/lambda_S3_role 
+    package:
+      include:
+        - handler.py
+        - yaml/**      
+    events:
+      - sns: arn:aws:sns:ap-southeast-1:373337940780:app-event-log-upload-stage
+
+#    Define function environment variables here
+    #environment:
+    #  variable: testVariable
+
+
+
+
+
