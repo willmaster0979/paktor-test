@@ -1,2 +1,2 @@
 # paktor-test
-test.
+test..
