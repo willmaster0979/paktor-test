@@ -5,7 +5,7 @@ import sys
 def hello(event, context):
     #sys.path.insert(0, './.vendor')
     body = {
-        "message": "Go Serverless v1.0! Your function executed successfully ... ..",
+        "message": "Go Serverless v1.0! Your function executed successfully .",
         "input": event
     }
 
