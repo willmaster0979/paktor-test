@@ -38,8 +38,8 @@ functions:
       include:
         - handler.py
         - yaml/**      
-    events:
-      - sns: arn:aws:sns:ap-southeast-1:373337940780:app-event-log-upload-stage
+    #events:
+    #  - sns: arn:aws:sns:ap-southeast-1:373337940780:app-event-log-upload-stage
 
 #    Define function environment variables here
     #environment:
